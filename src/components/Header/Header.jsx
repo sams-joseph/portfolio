@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
 import { HeaderContainer, Nav, Logo } from './Styled';
-import { Container } from '../GlobalStyles';
+import { Wrapper } from '../GlobalStyles';
 import logoimage from './img/logo1x.svg';
 
 class Header extends Component {
@@ -26,7 +26,7 @@ class Header extends Component {
     const { show } = this.state;
     return (
       <HeaderContainer show={show}>
-        <Container flex center>
+        <Wrapper flex center>
           <Link to="/">
             <Logo src={logoimage} alt="Joseph Sams" show={show} />
           </Link>
@@ -38,7 +38,7 @@ class Header extends Component {
               </li>
             </ul>
           </Nav>
-        </Container>
+        </Wrapper>
       </HeaderContainer>
     );
   }

@@ -9,19 +9,19 @@ import {
   Emphasis,
   Button,
 } from './Styled';
-import { Container } from '../GlobalStyles';
+import { Wrapper } from '../GlobalStyles';
 
 function Hero() {
   return (
     <HeroContainer>
-      <Container flex center fullHeight>
+      <Wrapper flex center fullHeight>
         <Lockup>
           <Name>Hello. I'm Joe</Name>
           <Heading>I Build Awesome</Heading>
           <Emphasis>Websites</Emphasis>
           <Button>Take a look</Button>
         </Lockup>
-      </Container>
+      </Wrapper>
       <HeroBkg />
     </HeroContainer>
   );
