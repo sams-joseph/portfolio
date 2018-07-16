@@ -8,7 +8,7 @@ export const ProjectContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Card = styled.a`
+export const Card = styled.div`
   color: white;
   display: block;
   background: #0B2833;
