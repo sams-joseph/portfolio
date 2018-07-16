@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 import heroImage from './img/hero-image.jpg';
 
 export const Wrapper = styled.div`
@@ -87,7 +88,7 @@ export const Emphasis = styled.h2`
   }
 `;
 
-export const Button = styled.a`
+export const Button = styled(Link)`
   color: white;
   display: inline-block;
   padding: 10px 20px;

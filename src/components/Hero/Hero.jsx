@@ -11,7 +11,8 @@ import {
   Wrapper
 } from './Styled';
 
-function Hero() {
+function Hero({ posts }) {
+  console.log(posts[0].node.fields.slug)
   return (
     <HeroContainer>
       <Wrapper flex center fullHeight>
@@ -19,7 +20,7 @@ function Hero() {
           <Name>Hello. I'm Joe</Name>
           <Heading>I Build Awesome</Heading>
           <Emphasis>Websites</Emphasis>
-          <Button>Take a look</Button>
+          <Button to={`${posts[0].node.fields.slug}`}>Take a look</Button>
         </Lockup>
       </Wrapper>
       <HeroBkg />

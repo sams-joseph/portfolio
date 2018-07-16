@@ -3,23 +3,24 @@ import Link from 'gatsby-link';
 
 export const ProjectContainer = styled.div`
   flex: 1 1 33%;
-  padding: 0 2px;
+  padding: 0 5px;
   min-width: 300px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const Card = styled.a`
   color: white;
   display: block;
   height: 100%;
-  border: 1px solid rgba(232, 80, 52, 0.25);
-  background: rgba(232, 80, 52, 0.5);
+  background: rgba(232, 80, 52, 1);
   transition: all 0.25s;
   cursor: pointer;
+  overflow: hidden;
+  border-radius: 2px;
 
   &:hover {
-    border: 1px solid rgba(232, 80, 52, 1);
-    background: rgba(232, 80, 52, 0.5);
+    background: rgba(232, 80, 52, 0.95);
+    transform: scale(1.01);
   }
 `;
 

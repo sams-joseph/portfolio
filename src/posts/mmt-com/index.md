@@ -1,4 +1,5 @@
 ---
+path: '/mmt-com'
 title: 'Welcome to the new site'
 date: '2018-07-16'
 ---
