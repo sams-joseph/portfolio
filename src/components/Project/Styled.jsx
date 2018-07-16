@@ -8,13 +8,14 @@ export const ProjectContainer = styled.div`
   margin-bottom: 5px;
 `;
 
-export const Card = styled(Link)`
+export const Card = styled.a`
   color: white;
   display: block;
   height: 100%;
   border: 1px solid rgba(232, 80, 52, 0.25);
   background: rgba(232, 80, 52, 0.5);
   transition: all 0.25s;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid rgba(232, 80, 52, 1);
