@@ -12,20 +12,15 @@ export const Card = styled.a`
   color: white;
   display: block;
   height: 100%;
-  background: rgba(232, 80, 52, 1);
+  background: #0B2833;
   transition: all 0.25s;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 2px;
-
-  &:hover {
-    background: rgba(232, 80, 52, 0.95);
-    transform: scale(1.01);
-  }
+  border-radius: 4px;
 `;
 
 export const Meta = styled.div`
-  padding: 20px;
+  padding: 10px;
 `;
 
 export const Image = styled.div`
@@ -35,4 +30,18 @@ export const Image = styled.div`
   ${({ img }) => img && `background: url(${img})`};
   background-posiiton: center;
   background-size: cover;
+`;
+
+export const Title = styled.h2`
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0 0 7px 0;
+`;
+
+export const Links = styled.div`
+  & img {
+    height: 16px;
+    margin-right: 10px;
+  }
 `;

@@ -96,6 +96,7 @@ export const Button = styled(Link)`
   background: rgba(232, 80, 52, 0.75);
   transition: background-color 0.25s;
   box-shadow: 0 0 6px rgba(11, 40, 51, 0.5);
+  border-radius: 3px;
 
   &:hover {
     background: rgba(232, 80, 52, 1);

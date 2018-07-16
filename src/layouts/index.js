@@ -14,7 +14,8 @@ injectGlobal([
     box-sizing: border-box;
   }
   body {
-    background-color: #0B2833;
+    // background-color: #0B2833;
+    background-color: #111111;
     margin: 0;
     font-family: ${constants.fontFamily};
     min-height: 100vh;

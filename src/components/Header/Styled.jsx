@@ -56,7 +56,7 @@ export const Nav = styled.nav`
       border-bottom: 2px solid white;
       ${({ show }) =>
     show
-      ? `border-bottom: 2px solid #103946`
+      ? `border-bottom: 2px solid white`
       : `border-bottom: 2px solid white`};
     }
   }
