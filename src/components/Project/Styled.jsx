@@ -11,7 +11,6 @@ export const ProjectContainer = styled.div`
 export const Card = styled.a`
   color: white;
   display: block;
-  height: 100%;
   background: #0B2833;
   transition: all 0.25s;
   cursor: pointer;

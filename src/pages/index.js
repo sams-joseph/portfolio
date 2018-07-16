@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import styled from 'styled-components';
 
 import Hero from '../components/Hero';
 import Project from '../components/Project';
@@ -8,11 +8,20 @@ import mmtComCover from './img/mmt-com-cover.jpg';
 import sepsisComCover from './img/sepsis-com-cover.jpg';
 import prepressCover from './img/prepress-cover.jpg';
 
+const SectionHeading = styled.h2`
+  color: white;
+  margin: 30px 0 10px 0;
+  padding: 0 0 0 10px;
+  font-weight: 300;
+  font-size: 20px;
+`;
+
 const IndexPage = ({ data }) => (
   <main>
     <Hero posts={data.allMarkdownRemark.edges} />
 
     <div style={{ width: '100%' }}>
+      <SectionHeading>Recent Projects</SectionHeading>
       <div
         style={{
           width: '100%',

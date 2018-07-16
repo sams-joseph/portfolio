@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HeroContainer = styled.section`
-  height: 70vw;
+  height: 40vw;
   max-height: 700px;
   position: relative;
   overflow: hidden;
