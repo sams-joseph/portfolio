@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { injectGlobal } from 'styled-components';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 import constants from '../constants';
 
@@ -53,7 +52,7 @@ injectGlobal([
 ]);
 
 const Layout = ({ children, data }) => (
-  <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+  <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -70,8 +69,6 @@ const Layout = ({ children, data }) => (
     />
     <Header />
     {children()}
-    <div style={{ flex: 1 }} />
-    <Footer />
   </div>
 );
 
