@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
 import { HeaderContainer, Nav, Logo } from './Styled';
-import { Container } from '../Styles';
+import { Container } from '../GlobalStyles';
 import logoimage from './img/logo1x.svg';
 
 class Header extends Component {

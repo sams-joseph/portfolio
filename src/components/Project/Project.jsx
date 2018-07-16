@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import { ProjectContainer, Card, Meta, Image } from './Styled';
-import { Container } from '../Styles';
 
 function Project({ img, title, description, slug }) {
   return (

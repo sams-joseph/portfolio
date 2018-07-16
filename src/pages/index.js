@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 import Hero from '../components/Hero';
 import Project from '../components/Project';
-import { Container } from '../Components/Styles';
+import { Container } from '../Components/GlobalStyles';
 
 import mmtComCover from './img/mmt-com-cover.jpg';
 import sepsisComCover from './img/sepsis-com-cover.jpg';

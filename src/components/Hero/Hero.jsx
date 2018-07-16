@@ -9,7 +9,7 @@ import {
   Emphasis,
   Button,
 } from './Styled';
-import { Container } from '../Styles';
+import { Container } from '../GlobalStyles';
 
 function Hero() {
   return (
