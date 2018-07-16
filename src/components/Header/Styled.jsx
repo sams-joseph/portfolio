@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  ${({ flex }) => flex && 'display: flex'};
+  ${({ center }) => center && 'align-items: center'};
+  ${({ fullHeight }) => fullHeight && 'height: 100%'};
+  flex-wrap: wrap;
+`;
+
 export const HeaderContainer = styled.header`
   width: 100%;
   ${({ show }) =>
@@ -44,9 +55,9 @@ export const Nav = styled.nav`
     &:hover {
       border-bottom: 2px solid white;
       ${({ show }) =>
-        show
-          ? `border-bottom: 2px solid #103946`
-          : `border-bottom: 2px solid white`};
+    show
+      ? `border-bottom: 2px solid #103946`
+      : `border-bottom: 2px solid white`};
     }
   }
 
@@ -54,7 +65,7 @@ export const Nav = styled.nav`
     display: block;
     color: white;
     ${({ show }) =>
-      show ? `line-height: 55px;` : `line-height: 65px;`} font-size: 14px;
+    show ? `line-height: 55px;` : `line-height: 65px;`} font-size: 14px;
     transition: all 0.5s;
 
     &:hover {

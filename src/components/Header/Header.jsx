@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
-import { HeaderContainer, Nav, Logo } from './Styled';
-import { Wrapper } from '../GlobalStyles';
+import { HeaderContainer, Nav, Logo, Wrapper } from './Styled';
 import logoimage from './img/logo1x.svg';
 
 class Header extends Component {

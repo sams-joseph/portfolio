@@ -8,8 +8,8 @@ import {
   Name,
   Emphasis,
   Button,
+  Wrapper
 } from './Styled';
-import { Wrapper } from '../GlobalStyles';
 
 function Hero() {
   return (
