@@ -13,7 +13,6 @@ export const Card = styled.div`
   display: block;
   background: #0B2833;
   transition: all 0.25s;
-  cursor: pointer;
   overflow: hidden;
   border-radius: 4px;
 `;
@@ -29,6 +28,7 @@ export const Image = styled.div`
   ${({ img }) => img && `background: url(${img})`};
   background-posiiton: center;
   background-size: cover;
+  cursor: pointer;
 `;
 
 export const Title = styled.h2`

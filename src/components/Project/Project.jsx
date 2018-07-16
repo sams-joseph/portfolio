@@ -8,8 +8,8 @@ import linkIcon from './img/link.svg';
 function Project({ img, title, description, slug }) {
   return (
     <ProjectContainer>
-      <Card onClick={() => navigateTo(`/${slug}`)}>
-        <Image img={img} />
+      <Card>
+        <Image img={img} onClick={() => navigateTo(`/${slug}`)} />
         <Meta>
           <Title>{title}</Title>
           <Links>

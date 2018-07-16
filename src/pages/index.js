@@ -10,8 +10,8 @@ import prepressCover from './img/prepress-cover.jpg';
 
 const SectionHeading = styled.h2`
   color: white;
-  margin: 30px 0 10px 0;
   padding: 0 0 0 10px;
+  margin: 0 0 10px 0;
   font-weight: 300;
   font-size: 20px;
 `;
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
   <main>
     <Hero posts={data.allMarkdownRemark.edges} />
 
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', padding: '30px 0' }}>
       <SectionHeading>Recent Projects</SectionHeading>
       <div
         style={{
