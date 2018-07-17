@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { injectGlobal } from 'styled-components';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import constants from '../constants';
 
@@ -70,6 +71,7 @@ const Layout = ({ children, data }) => (
     />
     <Header />
     {children()}
+    <Footer />
   </div>
 );
 

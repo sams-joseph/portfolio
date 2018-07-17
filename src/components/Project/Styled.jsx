@@ -2,16 +2,25 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 
 export const ProjectContainer = styled.div`
-  flex: 1 1 33%;
+  flex: 1 1 33.33%;
+  max-width: 33.33%;
   padding: 0 5px;
   min-width: 300px;
   margin-bottom: 10px;
+
+  @media (max-width: 930px) {
+    max-width: 50%;
+  }
+
+  @media (max-width: 630px) {
+    max-width: 100%;
+  }
 `;
 
 export const Card = styled.div`
   color: white;
   display: block;
-  background: #0B2833;
+  background: #0b2833;
   transition: all 0.25s;
   overflow: hidden;
   border-radius: 4px;

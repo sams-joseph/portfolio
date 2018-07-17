@@ -5,7 +5,7 @@ import { ProjectContainer, Card, Meta, Image, Title, Links } from './Styled';
 import githubIcon from './img/github.svg';
 import linkIcon from './img/link.svg';
 
-function Project({ img, title, description, slug }) {
+function Project({ img, title, description, slug, github, url }) {
   return (
     <ProjectContainer>
       <Card>
@@ -13,12 +13,14 @@ function Project({ img, title, description, slug }) {
         <Meta>
           <Title>{title}</Title>
           <Links>
-            <a href="#">
+            <a target="blank" href={github}>
               <img src={githubIcon} alt="" />
             </a>
-            <a href="#">
-              <img src={linkIcon} alt="" />
-            </a>
+            {url && (
+              <a target="blank" href={url}>
+                <img src={linkIcon} alt="" />
+              </a>
+            )}
           </Links>
         </Meta>
       </Card>

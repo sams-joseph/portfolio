@@ -19,13 +19,13 @@ export const HeroContainer = styled.section`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 750px) {
+  @media (max-width: 950px) {
     max-height: 1200px;
     height: 74vw;
   }
   @media (max-width: 625px) {
     max-height: 1200px;
-    height: 74vh;
+    height: 100vh;
   }
 `;
 

@@ -8,11 +8,10 @@ import {
   Name,
   Emphasis,
   Button,
-  Wrapper
+  Wrapper,
 } from './Styled';
 
 function Hero({ posts }) {
-  console.log(posts[0].node.fields.slug)
   return (
     <HeroContainer>
       <Wrapper flex center fullHeight>
@@ -20,7 +19,7 @@ function Hero({ posts }) {
           <Name>Hello. I'm Joe</Name>
           <Heading>I Build Awesome</Heading>
           <Emphasis>Websites</Emphasis>
-          <Button to={`${posts[0].node.fields.slug}`}>Take a look</Button>
+          <Button to="/prepress">Take a look</Button>
         </Lockup>
       </Wrapper>
       <HeroBkg />

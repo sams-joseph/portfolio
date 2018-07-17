@@ -30,13 +30,6 @@ class Header extends Component {
             <Logo src={logoimage} alt="Joseph Sams" show={show} />
           </Link>
           <div style={{ flex: 1 }} />
-          <Nav show={show}>
-            <ul>
-              <li>
-                <Link to="/resume">Resume</Link>
-              </li>
-            </ul>
-          </Nav>
         </Wrapper>
       </HeaderContainer>
     );
