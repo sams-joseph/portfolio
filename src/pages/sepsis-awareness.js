@@ -18,7 +18,7 @@ const Article = styled.article`
   color: #0b2833;
 
   & p {
-    line-height: 1.5em;
+    line-height: 2em;
     margin-bottom: 40px;
   }
 
