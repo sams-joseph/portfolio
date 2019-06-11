@@ -1,149 +1,229 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
 
-import Hero from '../components/Hero';
-import Project from '../components/Project';
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Hero from "../components/Hero"
+import Project from "../components/Project"
+import Contact from "../components/Contact"
 
-import mmtComCover from './img/mmt-com-cover.jpg';
-import sepsisComCover from './img/sepsis-com-cover.jpg';
-import prepressCover from './img/prepress-cover.jpg';
+import thinkImage from "../images/think-illustration.svg"
+import skillsImage from "../images/skills-illustration.svg"
 
-const SectionHeading = styled.h2`
-  color: white;
-  padding: 0 0 0 10px;
-  margin: 0 0 10px 0;
-  font-weight: 300;
-  font-size: 20px;
-`;
+import mmtCoverImage from "../images/mmt-com-cover.jpg"
+import prepressCoverImage from "../images/prepress-cover.jpg"
+import sepsisCoverImage from "../images/sepsis-com-cover.jpg"
 
-const SkillsContainer = styled.section`
+import styled from "styled-components"
+
+const Container = styled.section`
   width: 100%;
-  padding: 70px 0;
-  background: #0b2833;
-  color: white;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 840px;
-  padding: 0 20px;
+  padding: ${props => (props.padding ? props.padding : "0 30px")};
   margin: 0 auto;
+  flex-wrap: wrap;
+  display: ${props => (props.flex ? "flex" : "block")};
 
-  & h2 {
-    font-weight: 300;
-    margin: 0;
-    margin: 0 0 20px 0;
+  @media (min-width: 640px) {
+    max-width: 768px;
   }
 
-  & h3 {
-    font-weight: 400;
-    color: rgb(52, 232, 158);
-    padding: 0;
-    margin: 0 0 10px 0;
+  @media (min-width: 768px) {
+    max-width: 768px;
   }
 
-  & h4 {
-    padding: 0;
-    margin: 0 0 10px 0;
+  @media (min-width: 1024px) {
+    max-width: 1024px;
   }
 
-  & p {
-    line-height: 2em;
-    margin-bottom: 40px;
+  @media (min-width: 1280px) {
+    max-width: 1280px;
   }
+`
 
-  & ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0 40px 0;
+const Column = styled.div`
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  ${props => (props.order ? "order:" + props.order + ";" : "order: initial;")}
 
-    & li {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      padding: 10px;
-      background: white;
-      color: #0b2833;
+  @media (min-width: 640px) {
+    width: 50%;
+    padding: 40px 30px;
+    order: initial;
+
+    &:first-child {
+      padding: 40px 30px 40px 0;
+    }
+    &:last-child {
+      padding: 40px 0 40px 30px;
     }
   }
-`;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    padding: 70px 70px;
+
+    &:first-child {
+      padding: 70px 70px 70px 0;
+    }
+    &:last-child {
+      padding: 70px 0 70px 70px;
+    }
+  }
+`
+
+const Heading = styled.h2`
+  color: #4a4a4a;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  text-align: ${props => (props.center ? "center" : "left")};
+`
+
+const Subheading = styled.span`
+  display: block;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+  text-align: ${props => (props.center ? "center" : "left")};
+`
+
+const Body = styled.p`
+  color: #7e7e7e;
+  font-size: 1rem;
+  line-height: 28px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+`
+
+const Underscore = styled.div`
+  width: 50px;
+  height: 5px;
+  background: #0099f9;
+  margin-bottom: 20px;
+  ${props => (props.center ? "margin: 0 auto" : "")}
+`
+
+const Bkg = styled.svg`
+  width: 100%;
+  position: absolute;
+  ${props => (props.bottom ? "bottom: 0;" : "")}
+  ${props => (props.top ? "top: 0;" : "")}
+  z-index: ${props => (props.z ? props.z : "-1")};
+`
+
+const ProjectContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const List = styled.ul`
+  margin: 0;
+  padding: 10px 20px;
+`
+
+const Item = styled.li`
+  list-style: square;
+  color: #7e7e7e;
+  font-size: 1rem;
+  line-height: 28px;
+  font-weight: 400;
+  margin: 0;
+`
 
 const IndexPage = () => (
-  <main>
+  <Layout>
+    <SEO title="Home" />
     <Hero />
-
-    <div style={{ width: '100%', padding: '30px 10px' }}>
-      <SectionHeading>Recent Projects</SectionHeading>
+    <main style={{ paddingTop: "40px" }}>
+      <div style={{ position: "relative" }}>
+        <Bkg bottom viewBox="0 0 1488 211.92">
+          <path
+            d="M1088,175.92c-272-6-352-130-606-168-203.2-30.4-406,34-482,70v134H1488v-174C1445.33,85.92,1305.6,180.72,1088,175.92Z"
+            fill="#f6f9fc"
+          />
+        </Bkg>
+        <Container flex>
+          <Column>
+            <img width="100%" src={thinkImage} alt="Think Illustration" />
+          </Column>
+          <Column>
+            <Heading>About Me</Heading>
+            <Subheading>I build stuff for the web</Subheading>
+            <Underscore />
+            <Body>
+              I am a passionate developer and I love Javascript and the
+              environment around it. I creatively solve problems using
+              programming everyday. I bring a keen eye for design and an
+              attention to detail that can bring any idea to life. From concept
+              to finished product I can help you every step of the way.
+            </Body>
+          </Column>
+        </Container>
+      </div>
+      <div style={{ background: "#f6f9fc" }}>
+        <Container flex>
+          <Column>
+            <Heading>Skillset</Heading>
+            <Subheading>Responsive & Maintainable</Subheading>
+            <Underscore />
+            <List>
+              <Item>HTML, CSS, and Javascript</Item>
+              <Item>NodeJS</Item>
+              <Item>ReactJS, VueJS</Item>
+              <Item>PHP, Laravel</Item>
+              <Item>Docker</Item>
+              <Item>GIT</Item>
+              <Item>PostgreSQL</Item>
+            </List>
+          </Column>
+          <Column order="-1">
+            <img width="100%" src={skillsImage} alt="Skills Illustration" />
+          </Column>
+        </Container>
+      </div>
+      <Contact></Contact>
       <div
         style={{
-          width: '100%',
-          display: 'flex',
-          padding: '10px 5px 5px 5px',
-          flexWrap: 'wrap',
+          background: "#f6f9fc",
+          position: "relative",
         }}
       >
-        <Project
-          img={prepressCover}
-          title="Prepress Application"
-          description="Mac OSX app for automating functions, searching MIS system, and tracking previous autmated history"
-          slug="prepress"
-          github="https://github.com/sams-joseph/prepress-app"
-        />
-        <Project
-          img={mmtComCover}
-          title="Metromedia Technologies"
-          description="Main Webpage for Metromedia Technologies."
-          slug="mmt-com"
-          github="https://github.com/metromedia-technologies/mmt-redesign"
-          url="https://www.mmt.com"
-        />
-        <Project
-          img={sepsisComCover}
-          title="Sepsis Awareness"
-          description="Online ordering portal to design, order, and track billboards for Sepsis Awareness."
-          slug="sepsis-awareness"
-          github="https://github.com/sams-joseph/sa-web"
-          url="http://sepsis.mmt.com"
-        />
+        <Container id="projects" padding="0 20px">
+          <div style={{ padding: "70px 0" }}>
+            <Heading center>Recent Projects</Heading>
+            <Subheading center>here’s what i’ve been up to</Subheading>
+            <Underscore center />
+          </div>
+          <ProjectContainer>
+            <Project
+              src={mmtCoverImage}
+              title="Metromedia Technologies"
+              body="MMT.com needed a facelift. Re-designing a non-responsive, 10 year old, PHP site into a responsive static website. The goal of this page was to create a serverless site that could be hosted without the need of any backend."
+              url="/mmt-com"
+            ></Project>
+            <Project
+              src={prepressCoverImage}
+              title="Prepress Application"
+              body="The prepress department at MMT needed a way to automate the duplication of old orders into new orders. This app fulfilled that need. Built using Electron and ReactJS."
+              url="/prepress"
+            ></Project>
+            <Project
+              src={sepsisCoverImage}
+              title="Sepsis Foundation"
+              body="The Sepsis Portal was created to allow for customers to choose from a pre-selected list of design/size combinations and customize them with a name, date, and portrait image. Once created the design is added to your cart and can be added to until ready to checkout."
+              url="/sepsis-awareness"
+            ></Project>
+          </ProjectContainer>
+        </Container>
       </div>
-    </div>
-    <SkillsContainer>
-      <Container>
-        <h2>Experience</h2>
-        <h3>Metromedia Technologies - August 2010 - Present</h3>
-        <h4>Prepress Manager</h4>
-        <p>
-          Planned and implemented new software that automated the Prepress
-          workflow. Created javascript programs that automated function of the
-          Adobe Creative Suite removing manual touches and increased
-          productivity of the department. Created Mac OSX desktop application to
-          handle and manipulate production files in the prepress workflow.
-          Designed, coded, and deployed the new web presence of MMT. Developed
-          and maintained web applications used by customers to design and submit
-          orders for printed billboards.
-        </p>
+    </main>
+  </Layout>
+)
 
-        <h2>Skillset</h2>
-        <ul>
-          <li>Javascript</li>
-          <li>NodeJS</li>
-          <li>ReactJS</li>
-          <li>PostgreSQL</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>GIT</li>
-          <li>Docker</li>
-          <li>Adobe Creative Suite</li>
-          <li>Figma</li>
-        </ul>
-
-        <h2>Education</h2>
-        <h3>Mount Union University 2010</h3>
-        <h4>Bachelors Degree Media Computing</h4>
-        <h4>Minor Information Systems</h4>
-      </Container>
-    </SkillsContainer>
-  </main>
-);
-
-export default IndexPage;
+export default IndexPage

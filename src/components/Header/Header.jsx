@@ -1,39 +1,32 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import { Link } from "gatsby"
+import React from "react"
 
-import { HeaderContainer, Nav, Logo, Wrapper } from './Styled';
-import logoimage from './img/logo1x.svg';
+import { HeaderContainer, Container } from "./styled"
 
-class Header extends Component {
-  state = {
-    show: false,
-  };
+const Header = () => (
+  <HeaderContainer>
+    <Container>
+      <Link
+        to="/"
+        style={{
+          color: `white`,
+          textDecoration: `none`,
+        }}
+      >
+        Home
+      </Link>
+      <Link
+        to="/#projects"
+        style={{
+          color: `white`,
+          textDecoration: `none`,
+          marginLeft: "30px",
+        }}
+      >
+        Projects
+      </Link>
+    </Container>
+  </HeaderContainer>
+)
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.onScroll, false);
-  }
-
-  onScroll = () => {
-    if (window.scrollY > 75) {
-      this.setState({ show: true });
-    } else {
-      this.setState({ show: false });
-    }
-  };
-
-  render() {
-    const { show } = this.state;
-    return (
-      <HeaderContainer show={show}>
-        <Wrapper flex center>
-          <Link to="/">
-            <Logo src={logoimage} alt="Joseph Sams" show={show} />
-          </Link>
-          <div style={{ flex: 1 }} />
-        </Wrapper>
-      </HeaderContainer>
-    );
-  }
-}
-
-export default Header;
+export default Header

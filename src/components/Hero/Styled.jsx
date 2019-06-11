@@ -1,104 +1,122 @@
-import styled from 'styled-components';
-import Link from 'gatsby-link';
-import heroImage from './img/hero-image.jpg';
-
-export const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 20px;
-  ${({ flex }) => flex && 'display: flex'};
-  ${({ center }) => center && 'align-items: center'};
-  ${({ fullHeight }) => fullHeight && 'height: 100%'};
-  flex-wrap: wrap;
-`;
+import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const HeroContainer = styled.section`
-  height: 40vw;
-  max-height: 700px;
   position: relative;
-  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  max-height: 960px;
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+  background: linear-gradient(to right, #0072ff, #00c6ff);
 
-  @media (max-width: 950px) {
-    max-height: 1200px;
-    height: 74vw;
+  @media (min-width: 768px) {
+    height: 64vw;
+    max-height: 800px;
+    background-position: top center;
   }
-  @media (max-width: 625px) {
-    max-height: 1200px;
-    height: 100vh;
-  }
-`;
+`
 
-export const HeroBkg = styled.div`
-  top: 0;
+export const Container = styled.section`
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  position: absolute;
-  background-image: linear-gradient(
-      135deg,
-      rgba(52, 232, 158, 0.85),
-      rgba(15, 52, 67, 1)
-    ),
-    url(${heroImage});
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-`;
-
-export const Lockup = styled.div`
-  width: 100%;
-  max-width: 800px;
+  padding: 40px 20px 0 20px;
   margin: 0 auto;
-`;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  display: ${props => (props.flex ? "flex" : "block")};
 
-export const Name = styled.h3`
+  @media (min-width: 640px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 140px 30px 0 30px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+`
+
+export const HeroContent = styled.div`
   color: white;
-  font-weight: 300;
-  font-size: 2.25em;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 200px;
 
-  @media (max-width: 625px) {
-    font-size: 1.5em;
+  @media (min-width: 768px) {
+    width: 50%;
+    padding-bottom: 0;
   }
-`;
 
-export const Heading = styled.h1`
-  color: white;
-  font-weight: 700;
-  font-size: 3em;
-  padding: 0;
-  margin: 0;
-
-  @media (max-width: 625px) {
-    font-size: 1.5em;
+  span {
+    font-family: "Yellowtail", cursive;
+    font-size: 1.5rem;
   }
-`;
 
-export const Emphasis = styled.h2`
-  color: #0b2833;
-  font-weight: 900;
-  font-size: 4em;
-  padding: 0;
-  margin: 0 0 40px 0;
-
-  @media (max-width: 625px) {
-    font-size: 1.5em;
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0;
   }
-`;
+
+  p {
+    opacity: 0.9;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 28px;
+    max-width: 375px;
+    padding-bottom: 40px;
+  }
+`
+
+export const HeroImage = styled.div`
+  width: 100%;
+  order: -1;
+  padding-bottom: 50px;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    order: initial;
+    padding-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+    max-height: 300px;
+  }
+`
+
+export const Wave = styled.svg`
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+`
 
 export const Button = styled(Link)`
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
   color: white;
-  display: inline-block;
-  padding: 10px 20px;
-  border: 1px solid #e85034;
-  background: rgba(232, 80, 52, 0.75);
-  transition: background-color 0.25s;
-  box-shadow: 0 0 6px rgba(11, 40, 51, 0.5);
+  background: #3ecf8e;
   border-radius: 3px;
+  padding: 10px 14px;
+  transition: all 0.125s;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 
   &:hover {
-    background: rgba(232, 80, 52, 1);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
   }
-`;
+`

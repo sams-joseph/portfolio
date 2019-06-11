@@ -1,3 +1,3 @@
-import ProjectBanner from './ProjectBanner';
+import ProjectBanner from './ProjectBanner'
 
-export default ProjectBanner;
+export default ProjectBanner

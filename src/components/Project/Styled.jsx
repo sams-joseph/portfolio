@@ -1,55 +1,52 @@
-import styled from 'styled-components';
-import Link from 'gatsby-link';
+import styled from "styled-components"
+import { Link } from "gatsby"
 
-export const ProjectContainer = styled.div`
-  flex: 1 1 33.33%;
-  max-width: 33.33%;
-  padding: 0 5px;
-  min-width: 300px;
-  margin-bottom: 10px;
+export const Container = styled.div`
+  width: 100%;
+  padding: 0 10px;
+  z-index: 1;
+  margin-bottom: 70px;
 
-  @media (max-width: 930px) {
-    max-width: 50%;
+  @media (min-width: 640px) {
+    width: 50%;
   }
 
-  @media (max-width: 630px) {
-    max-width: 100%;
+  @media (min-width: 1024px) {
+    width: 33%;
   }
-`;
+`
 
-export const Card = styled.div`
-  color: white;
-  display: block;
-  background: #0b2833;
-  transition: all 0.25s;
-  overflow: hidden;
-  border-radius: 4px;
-`;
+export const Image = styled.img`
+  width: 100%;
+  height: 225px;
+  margin-bottom: 30px;
+  border-radius: 6px 6px 0 0;
+`
 
-export const Meta = styled.div`
-  padding: 10px;
-`;
+export const Heading = styled.h3`
+  color: #4a4a4a;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+`
 
-export const Image = styled.div`
-  height: 20vw;
-  max-height: 400px;
-  min-height: 200px;
-  ${({ img }) => img && `background: url(${img})`};
-  background-posiiton: center;
-  background-size: cover;
-  cursor: pointer;
-`;
-
-export const Title = styled.h2`
-  font-size: 15px;
+export const Body = styled.p`
+  color: #7e7e7e;
+  font-size: 0.85rem;
+  line-height: 24px;
   font-weight: 400;
-  padding: 0;
-  margin: 0 0 7px 0;
-`;
+  margin: 0 0 30px 0;
+`
 
-export const Links = styled.div`
-  & img {
-    height: 16px;
-    margin-right: 10px;
+export const ViewLink = styled(Link)`
+  color: #0099f9;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+
+  &:hover {
+    text-decoration: underline;
   }
-`;
+`
