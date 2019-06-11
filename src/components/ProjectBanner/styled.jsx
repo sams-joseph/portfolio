@@ -116,8 +116,8 @@ export const Button = styled.a`
 
 export const Nav = styled.nav`
   width: 100%;
-  background: #dde5ec;
-  border-bottom: 1px solid #cad5de;
+  background: #ECF0F4;
+  border-bottom: 1px solid #DFE4EA;
 `
 
 export const NavLink = styled(Link)`
@@ -128,9 +128,10 @@ export const NavLink = styled(Link)`
   font-weight: 600;
   font-size: 0.85rem;
   color: #4a4a4a;
-  border-right: 1px solid #cad5de;
+  border-right: 1px solid #DFE4EA;
+  transition: background 0.125s;
 
   &:hover {
-    background: #cad5de;
+    background: #DFE4EA;
   }
 `

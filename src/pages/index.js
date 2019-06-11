@@ -1,4 +1,5 @@
 import React from "react"
+import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,10 +9,6 @@ import Contact from "../components/Contact"
 
 import thinkImage from "../images/think-illustration.svg"
 import skillsImage from "../images/skills-illustration.svg"
-
-import mmtCoverImage from "../images/mmt-com-cover.jpg"
-import prepressCoverImage from "../images/prepress-cover.jpg"
-import sepsisCoverImage from "../images/sepsis-com-cover.jpg"
 
 import styled from "styled-components"
 
@@ -136,7 +133,7 @@ const Item = styled.li`
   margin: 0;
 `
 
-const IndexPage = () => (
+const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" />
     <Hero />
@@ -202,23 +199,26 @@ const IndexPage = () => (
           </div>
           <ProjectContainer>
             <Project
-              src={mmtCoverImage}
               title="Metromedia Technologies"
               body="MMT.com needed a facelift. Re-designing a non-responsive, 10 year old, PHP site into a responsive static website. The goal of this page was to create a serverless site that could be hosted without the need of any backend."
               url="/mmt-com"
-            ></Project>
+            >
+              <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+            </Project>
             <Project
-              src={prepressCoverImage}
               title="Prepress Application"
               body="The prepress department at MMT needed a way to automate the duplication of old orders into new orders. This app fulfilled that need. Built using Electron and ReactJS."
               url="/prepress"
-            ></Project>
+            >
+              <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
+            </Project>
             <Project
-              src={sepsisCoverImage}
               title="Sepsis Foundation"
               body="The Sepsis Portal was created to allow for customers to choose from a pre-selected list of design/size combinations and customize them with a name, date, and portrait image. Once created the design is added to your cart and can be added to until ready to checkout."
               url="/sepsis-awareness"
-            ></Project>
+            >
+              <Img fluid={props.data.imageThree.childImageSharp.fluid} />
+            </Project>
           </ProjectContainer>
         </Container>
       </div>
@@ -227,3 +227,29 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+query {
+  imageOne: file(relativePath: { eq: "mmt-com-cover.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  imageTwo: file(relativePath: { eq: "prepress-cover.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  imageThree: file(relativePath: { eq: "sepsis-com-cover.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`

@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProjectBanner from "../components/ProjectBanner"
-import FeatureImage from "../images/prepress-cover.jpg"
 import InternalImage from "../images/prepress-demo.mp4"
 
 const Main = styled.main`
@@ -39,15 +39,16 @@ const Article = styled.article`
   }
 `
 
-const MmtPage = () => (
+const MmtPage = (props) => (
   <Layout>
     <SEO title="Prepress App" />
     <Main>
       <ProjectBanner
-        featureImage={FeatureImage}
         github="https://github.com/sams-joseph/prepress-app"
         techs={["Electron", "React"]}
-      />
+      >
+        <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+      </ProjectBanner>
       <Article>
         <p>
           The prepress department at MMT needed a way to automate the
@@ -87,3 +88,15 @@ const MmtPage = () => (
 )
 
 export default MmtPage
+
+export const pageQuery = graphql`
+query {
+  imageOne: file(relativePath: { eq: "prepress-cover.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`

@@ -16,11 +16,12 @@ export const Container = styled.div`
   }
 `
 
-export const Image = styled.img`
+export const Image = styled.div`
   width: 100%;
-  height: 225px;
+  height: 200px;
   margin-bottom: 30px;
   border-radius: 6px 6px 0 0;
+  overflow: hidden;
 `
 
 export const Heading = styled.h3`

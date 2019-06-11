@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProjectBanner from "../components/ProjectBanner"
-import FeatureImage from "../images/mmt-com-feature.jpg"
-import InternalImage from "../images/mmt-com-internal.jpg"
 
 const Main = styled.main`
   min-height: 100vh;
@@ -28,16 +27,17 @@ const Article = styled.article`
   }
 `
 
-const MmtPage = () => (
+const MmtPage = (props) => (
   <Layout>
     <SEO title="MMT Homepage" />
     <Main>
       <ProjectBanner
-        featureImage={FeatureImage}
         url="https://www.mmt.com"
         techs={["Jekyll", "Sass", "Webpack"]}
         github="https://github.com/metromedia-technologies/mmt-redesign"
-      />
+      >
+        <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+      </ProjectBanner>
       <Article>
         <p>
           MMT.com needed a facelift. Re-designing a non-responsive, 10 year old,
@@ -53,11 +53,29 @@ const MmtPage = () => (
           array of my skillset. Going from wireframe design to content creation
           to end product allowed for a satisfied client.
         </p>
-
-        <img src={InternalImage} alt="MMT Page" />
+        <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
       </Article>
     </Main>
   </Layout>
 )
 
 export default MmtPage
+
+export const pageQuery = graphql`
+query {
+  imageOne: file(relativePath: { eq: "mmt-com-feature.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  imageTwo: file(relativePath: { eq: "mmt-com-internal.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`

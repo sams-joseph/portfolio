@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProjectBanner from "../components/ProjectBanner"
-import FeatureImage from "../images/sepsis-com-cover.jpg"
 import InternalImage from "../images/sepsis-demo.mp4"
 
 const Main = styled.main`
@@ -39,12 +39,11 @@ const Article = styled.article`
   }
 `
 
-const MmtPage = () => (
+const MmtPage = (props) => (
   <Layout>
     <SEO title="Sepsis Awareness" />
     <Main>
       <ProjectBanner
-        featureImage={FeatureImage}
         url="http://sepsis.mmt.com"
         github="https://github.com/sams-joseph/sa-web"
         techs={[
@@ -56,7 +55,9 @@ const MmtPage = () => (
           "Recharts",
           "NGINX",
         ]}
-      />
+      >
+        <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+      </ProjectBanner>
       <Article>
         <p>
           Sepsis Awareness is a non profit that produces billboard campaigns to
@@ -101,3 +102,15 @@ const MmtPage = () => (
 )
 
 export default MmtPage
+
+export const pageQuery = graphql`
+query {
+  imageOne: file(relativePath: { eq: "sepsis-com-cover.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`

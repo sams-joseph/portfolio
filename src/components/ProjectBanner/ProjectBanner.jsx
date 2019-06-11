@@ -11,13 +11,13 @@ import {
   NavLink,
 } from "./styled"
 
-function ProjectBanner({ featureImage, url, github, techs }) {
+function ProjectBanner({ children, url, github, techs }) {
   return (
     <div>
       <ProjectBannerContainer>
         <Wrapper flex>
           <Col>
-            <img src={featureImage} alt="Feature" />
+            {children}
           </Col>
           <Col>
             <Heading>Technologies</Heading>
