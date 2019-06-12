@@ -53,7 +53,8 @@ export const HeroContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 150px;
+  padding-bottom: 125px;
+  z-index: 2;
 
   @media (min-width: 768px) {
     padding-bottom: 0;
