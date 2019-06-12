@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export const HeroContainer = styled.section`
   position: relative;
-  height: 100vh;
+  // height: 100vh;
   width: 100%;
   max-height: 960px;
   background: #00c6ff;
@@ -24,22 +24,23 @@ export const Container = styled.section`
   margin: 0 auto;
   flex-wrap: wrap;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   display: ${props => (props.flex ? "flex" : "block")};
 
   @media (min-width: 640px) {
     max-width: 768px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 30px 0 30px;
   }
 
   @media (min-width: 768px) {
     max-width: 768px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 140px 30px 0 30px;
   }
 
   @media (min-width: 1024px) {
     max-width: 1024px;
+    padding: 140px 30px 0 30px;
   }
 
   @media (min-width: 1280px) {
@@ -90,10 +91,11 @@ export const HeroImage = styled.div`
   right: 0;
   bottom: 0;
   overflow: hidden;
+  display: none;
 
   @media (min-width: 768px) {
-    order: initial;
     padding-bottom: 0;
+    display: block;
   }
 
   img {

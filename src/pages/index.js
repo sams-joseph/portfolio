@@ -137,7 +137,9 @@ const Item = styled.li`
 const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" />
-    <Hero />
+    <Hero>
+      <Img fluid={props.data.heroImage.childImageSharp.fluid} />
+    </Hero>
     <main style={{ paddingTop: "40px" }}>
       <div style={{ position: "relative" }}>
         <Bkg bottom viewBox="0 0 1488 211.92">
@@ -246,6 +248,13 @@ query {
     }
   }
   imageThree: file(relativePath: { eq: "sepsis-com-cover.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  heroImage: file(relativePath: { eq: "rocket-illustration.png" }) {
     childImageSharp {
       fluid(maxWidth: 1000) {
         ...GatsbyImageSharpFluid

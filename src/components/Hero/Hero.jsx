@@ -9,9 +9,7 @@ import {
   Button,
 } from "./styled"
 
-import rocketImage from "./images/rocket-illustration.png"
-
-const Hero = () => {
+const Hero = ({ children }) => {
 
   return (
     <HeroContainer>
@@ -27,7 +25,7 @@ const Hero = () => {
         </HeroContent>
       </Container>
       <HeroImage>
-        <img src={rocketImage} alt="Ready for startup" />
+        {children}
       </HeroImage>
       <Wave viewBox="0 0 1920 265">
         <path
