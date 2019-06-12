@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 
 export const HeroContainer = styled.section`
   position: relative;
-  // height: 100vh;
   width: 100%;
   max-height: 960px;
   background: #00c6ff;
@@ -85,7 +84,6 @@ export const HeroContent = styled.div`
 
 export const HeroImage = styled.div`
   width: 95%;
-  padding-bottom: 50px;
   position: absolute;
   top: 0;
   right: 0;
@@ -93,24 +91,17 @@ export const HeroImage = styled.div`
   overflow: hidden;
   display: none;
 
-  @media (min-width: 768px) {
-    padding-bottom: 0;
-    display: block;
-  }
-
-  img {
-    width: 100%;
-    max-width: 800px;
-    max-height: 600px;
-    float: right;
-  }
-
   @media (min-width: 640px) {
     width: 75%;
   }
 
   @media (min-width: 768px) {
     width: 65%;
+    display: block;
+  }
+
+  @media (min-width: 1280px) {
+    top: -100px;
   }
 `
 

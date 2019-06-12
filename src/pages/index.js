@@ -256,7 +256,7 @@ query {
   }
   heroImage: file(relativePath: { eq: "rocket-illustration.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 1200) {
         ...GatsbyImageSharpFluid
       }
     }
