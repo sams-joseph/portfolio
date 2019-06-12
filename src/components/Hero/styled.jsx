@@ -23,7 +23,8 @@ export const Container = styled.section`
   padding: 40px 20px 0 20px;
   margin: 0 auto;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: flex-end;
+  justify-content: center;
   display: ${props => (props.flex ? "flex" : "block")};
 
   @media (min-width: 640px) {
@@ -32,6 +33,8 @@ export const Container = styled.section`
 
   @media (min-width: 768px) {
     max-width: 768px;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 140px 30px 0 30px;
   }
 
@@ -46,15 +49,13 @@ export const Container = styled.section`
 
 export const HeroContent = styled.div`
   color: white;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 
   @media (min-width: 768px) {
-    width: 50%;
     padding-bottom: 0;
   }
 
@@ -81,19 +82,32 @@ export const HeroContent = styled.div`
 `
 
 export const HeroImage = styled.div`
-  width: 100%;
-  order: -1;
+  width: 95%;
   padding-bottom: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 
   @media (min-width: 768px) {
-    width: 50%;
     order: initial;
     padding-bottom: 0;
   }
 
   img {
     width: 100%;
-    max-height: 300px;
+    max-width: 800px;
+    max-height: 600px;
+    float: right;
+  }
+
+  @media (min-width: 640px) {
+    width: 75%;
+  }
+
+  @media (min-width: 768px) {
+    width: 65%;
   }
 `
 
