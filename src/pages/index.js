@@ -8,6 +8,7 @@ import Hero from "../components/Hero"
 import Project from "../components/Project"
 import Contact from "../components/Contact"
 
+import rocketImage from "../images/rocket-illustration.svg"
 import thinkImage from "../images/think-illustration.svg"
 import skillsImage from "../images/skills-illustration.svg"
 
@@ -138,7 +139,7 @@ const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" />
     <Hero>
-      <Img fluid={props.data.heroImage.childImageSharp.fluid} />
+      <img src={rocketImage} alt="Rocket Blasting Off" />
     </Hero>
     <main style={{ paddingTop: "40px" }}>
       <div style={{ position: "relative" }}>
@@ -233,32 +234,32 @@ export default IndexPage
 
 export const pageQuery = graphql`
 query {
-  imageOne: file(relativePath: { eq: "mmt-com-cover.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
+      imageOne: file(relativePath: {eq: "mmt-com-cover.jpg" }) {
+      childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+    }
     }
   }
-  imageTwo: file(relativePath: { eq: "prepress-cover.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
+  imageTwo: file(relativePath: {eq: "prepress-cover.jpg" }) {
+      childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+    }
     }
   }
-  imageThree: file(relativePath: { eq: "sepsis-com-cover.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
+  imageThree: file(relativePath: {eq: "sepsis-com-cover.jpg" }) {
+      childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+    }
     }
   }
-  heroImage: file(relativePath: { eq: "rocket-illustration.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1200) {
-        ...GatsbyImageSharpFluid
-      }
+  heroImage: file(relativePath: {eq: "rocket-illustration.png" }) {
+      childImageSharp {
+    fluid(maxWidth: 1200) {
+      ...GatsbyImageSharpFluid
+    }
     }
   }
 }

@@ -13,6 +13,7 @@ export const HeroContainer = styled.section`
     height: 64vw;
     max-height: 800px;
     background-position: top center;
+    background: white;
   }
 `
 
@@ -58,6 +59,7 @@ export const HeroContent = styled.div`
 
   @media (min-width: 768px) {
     padding-bottom: 0;
+    color: #4a4a4a;
   }
 
   span {
@@ -83,7 +85,8 @@ export const HeroContent = styled.div`
 `
 
 export const HeroImage = styled.div`
-  width: 95%;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -91,17 +94,25 @@ export const HeroImage = styled.div`
   overflow: hidden;
   display: none;
 
-  @media (min-width: 640px) {
-    width: 75%;
+  img {
+    float: right;
+    height: 100%;
+
+    @media (min-width: 768px) {
+      height: 80%;
+    }
+
+    @media (min-width: 1024px) {
+      height: 90%;
+    }
+
+    @media (min-width: 1280px) {
+      height: 100%;
+    }
   }
 
   @media (min-width: 768px) {
-    width: 65%;
     display: block;
-  }
-
-  @media (min-width: 1280px) {
-    top: -100px;
   }
 `
 
@@ -109,6 +120,10 @@ export const Wave = styled.svg`
   width: 100%;
   position: absolute;
   bottom: -2px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 export const Button = styled(Link)`
