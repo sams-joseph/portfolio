@@ -1,16 +1,16 @@
-import React from "react"
-import styled from "styled-components"
-import Img from "gatsby-image"
-import { graphql } from "gatsby"
+import React from 'react';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ProjectBanner from "../components/ProjectBanner"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import ProjectBanner from '../components/ProjectBanner';
 
 const Main = styled.main`
   min-height: 100vh;
   background: #f6f9fc;
-`
+`;
 
 const Article = styled.article`
   width: 100%;
@@ -26,15 +26,16 @@ const Article = styled.article`
     width: 100%;
     border-radius: 6px;
   }
-`
+`;
 
-const MmtPage = (props) => (
+const MmtPage = props => (
   <Layout>
     <SEO title="MMT Homepage" />
     <Main>
       <ProjectBanner
         url="https://www.mmt.com"
-        techs={["Jekyll", "Sass", "Webpack"]}
+        techs={['Jekyll', 'Sass', 'Webpack']}
+        heading="Technologies"
         github="https://github.com/metromedia-technologies/mmt-redesign"
       >
         <Img fluid={props.data.imageOne.childImageSharp.fluid} />
@@ -58,25 +59,25 @@ const MmtPage = (props) => (
       </Article>
     </Main>
   </Layout>
-)
+);
 
-export default MmtPage
+export default MmtPage;
 
 export const pageQuery = graphql`
-query {
-  imageOne: file(relativePath: { eq: "mmt-com-feature.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+  query {
+    imageOne: file(relativePath: { eq: "mmt-com-feature.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    imageTwo: file(relativePath: { eq: "mmt-com-internal.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
-  imageTwo: file(relativePath: { eq: "mmt-com-internal.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-}
-`
+`;

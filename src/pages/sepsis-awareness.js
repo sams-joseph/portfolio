@@ -1,17 +1,17 @@
-import React from "react"
-import styled from "styled-components"
-import Img from "gatsby-image"
-import { graphql } from "gatsby"
+import React from 'react';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ProjectBanner from "../components/ProjectBanner"
-import InternalImage from "../images/sepsis-demo.mp4"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import ProjectBanner from '../components/ProjectBanner';
+import InternalImage from '../images/sepsis-demo.mp4';
 
 const Main = styled.main`
   min-height: 100vh;
   background: #f6f9fc;
-`
+`;
 
 const Article = styled.article`
   width: 100%;
@@ -38,23 +38,24 @@ const Article = styled.article`
     width: 100%;
     border-radius: 6px;
   }
-`
+`;
 
-const MmtPage = (props) => (
+const MmtPage = props => (
   <Layout>
     <SEO title="Sepsis Awareness" />
     <Main>
       <ProjectBanner
         url="http://sepsis.mmt.com"
         github="https://github.com/sams-joseph/sa-web"
+        heading="Technologies"
         techs={[
-          "React",
-          "Nodejs",
-          "Postgres",
-          "Docker",
-          "Konva",
-          "Recharts",
-          "NGINX",
+          'React',
+          'Nodejs',
+          'Postgres',
+          'Docker',
+          'Konva',
+          'Recharts',
+          'NGINX',
         ]}
       >
         <Img fluid={props.data.imageOne.childImageSharp.fluid} />
@@ -100,18 +101,18 @@ const MmtPage = (props) => (
       </Article>
     </Main>
   </Layout>
-)
+);
 
-export default MmtPage
+export default MmtPage;
 
 export const pageQuery = graphql`
-query {
-  imageOne: file(relativePath: { eq: "sepsis-com-cover.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+  query {
+    imageOne: file(relativePath: { eq: "sepsis-com-cover.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
-}
-`
+`;

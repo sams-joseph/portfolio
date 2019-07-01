@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 import {
   ProjectBannerContainer,
@@ -9,31 +9,38 @@ import {
   Button,
   Nav,
   NavLink,
-} from "./styled"
+} from './styled';
 
-function ProjectBanner({ children, url, github, techs }) {
+function ProjectBanner({ children, url, github, techs, heading, download }) {
   return (
     <div>
       <ProjectBannerContainer>
         <Wrapper flex>
+          <Col>{children}</Col>
           <Col>
-            {children}
-          </Col>
-          <Col>
-            <Heading>Technologies</Heading>
-            <List>
-              {techs.map((tech, index) => (
-                <li key={index}>{tech}</li>
-              ))}
-            </List>
+            <Heading>{heading}</Heading>
+            {techs && (
+              <List>
+                {techs.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </List>
+            )}
             {url && (
               <Button target="blank" href={url}>
                 Visit Site
               </Button>
             )}
-            <Button target="blank" href={github}>
-              View on Github
-            </Button>
+            {github && (
+              <Button target="blank" href={github}>
+                View on Github
+              </Button>
+            )}
+            {download && (
+              <Button target="blank" href={download}>
+                Download
+              </Button>
+            )}
           </Col>
         </Wrapper>
       </ProjectBannerContainer>
@@ -44,7 +51,7 @@ function ProjectBanner({ children, url, github, techs }) {
         </Wrapper>
       </Nav>
     </div>
-  )
+  );
 }
 
-export default ProjectBanner
+export default ProjectBanner;
